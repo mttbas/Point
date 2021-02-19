@@ -6,21 +6,33 @@ public class Main {
         // COMPARING OBJECTS :
         var point1 = new Point(1,2);
         var point2 = new Point(1,2);
-        System.out.println(point1 == point2);
-        System.out.println(point1.equals(point2));
+        System.out.println(point1 == point2); // false
+        System.out.println(point1.equals(point2)); // true after overriding
+        System.out.println(point1.equals(new TextBox(true, "test")));
+        // super and sub class constructors are executed respectively ...
+        // boolean result of line 11 :
+        // first EXCEPTION
+        // then false after making changes to .equals() method and overriding it better!!!
+
         /*
-        * result: false - why? the have the same x & y. because, these are reference TYPES. so the values that
-        * are stored in these variables are the addresses of POINT OBJECTS in MEMORY. here we are dealing
-        * with 2 different POINT OBJECTS.
-        * what if we use .equals() method to compare the two objects?
-        * result: false again. because the default implementation of this method in the object class
-        * compares 2 objects based on their references.
-        * SOLUTION: we can OVERRIDE this method to change the implementation of this method so that
-        * it compares 2 objects based on their coordinates x & y.
-        * so we override equals() method in Point class
         * run:
         * false --- for ==
         * true ---- after overriding .equals()
+        *
+        * however it has still problem: because .equals() below is of the TYPE Object
+        * @Override
+          public boolean equals(Object obj) {
+             var other = (Point)obj;
+             return other.x == x && other.y == y;
+          }
+        * so we can pass any object in it. see line 11. we pass new TextBox() object and we get EXCEPTION.
+        * SOLUTION: before casting we need to make sure that the obj is an InSTANCE OF Point class
+        * so we add:
+        * if (!(obj instanceof Point))
+        * return false;
+        * other wise cast the object down to point. and change the implementation of .equals()
+        *
+        *
          */
     }
 }
