@@ -14,7 +14,12 @@ public class Main {
         System.out.println(point1.hashCode());
         System.out.println(point2.hashCode());
 
-        // to see the result of the hashcodes above without overriding hashCode() we delete
-        // it temporarily using ctrl+/
+
+        // just for me to practice
+        System.out.println(point1.getClass());
+        System.out.println(point2.getClass());
+        System.out.println(point1 == null);
+        System.out.println(point2 == null);
+
     }
 }
