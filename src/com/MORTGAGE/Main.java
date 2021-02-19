@@ -9,9 +9,11 @@ public class Main {
         System.out.println(point1 == point2); // false
         System.out.println(point1.equals(point2)); // true after overriding
         System.out.println(point1.equals(new TextBox(true, "test")));
-
-        // what if we pass point1
         System.out.println(point1.equals(point1));
-        // answer: true but still we can refine override CODE: by adding if ( this = obj ) return true;
+
+        System.out.println(point1.hashCode());
+        System.out.println(point2.hashCode());
+
+        // it is a best practice to override hashcode as well, if you override equal() method.
     }
 }
