@@ -18,6 +18,9 @@ public class Main {
         * SOLUTION: we can OVERRIDE this method to change the implementation of this method so that
         * it compares 2 objects based on their coordinates x & y.
         * so we override equals() method in Point class
+        * run:
+        * false --- for ==
+        * true ---- after overriding .equals()
          */
     }
 }
