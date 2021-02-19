@@ -14,6 +14,7 @@ public class Main {
         System.out.println(point1.hashCode());
         System.out.println(point2.hashCode());
 
-        // it is a best practice to override hashcode as well, if you override equal() method.
+        // to see the result of the hashcodes above without overriding hashCode() we delete
+        // it temporarily using ctrl+/
     }
 }
